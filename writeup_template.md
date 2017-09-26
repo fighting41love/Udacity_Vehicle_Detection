@@ -117,7 +117,8 @@ Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spat
 
 #### 1. Provide a link to your final video output. Your pipeline should perform reasonably well on the entire project video. Here's a [link to my video result](https://github.com/fighting41love/Udacity_Vehicle_Detection/blob/master/project_video_output.mp4).
 We also upload the video to [youtube]().
-####2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
+
+#### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
 I illustrate how we solve the problem in `Sliding Window Search` part.
 
 ### Discussion
