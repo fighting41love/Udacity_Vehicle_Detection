@@ -30,7 +30,7 @@ I grabbed random images from each of the two classes and displayed them to get a
 Here is an example using the YCrCb color space:
 ![Hog](http://upload-images.jianshu.io/upload_images/2528310-5d5457140c146f03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/720)
 
-#### 2. Explain how you settled on your final choice of HOG parameters.
+####2. Explain how you settled on your final choice of HOG parameters.
 I tried various combinations of parameters. The `YCrCb` is the best choice. Others can also use the `GRAY` colors pace. However, the `GRAY` which neglect the color information may loose the experimental result. I finally set the parameters in `Cell 17` as follows:
 ```
 color_space = 'YCrCb' # Can be RGB, HSV, LUV, HLS, YUV, YCrCb
@@ -48,7 +48,7 @@ y_start_stop = [400, 656] # Min and max in y to search in slide_window()
 scale = 1.5 # A parameter for the function finding cars
 ```
 
-#### 3. Describe how you trained a classifier using your selected HOG features (and color features if you used them).
+####3. Describe how you trained a classifier using your selected HOG features (and color features if you used them).
 In `Cell 17`, I trained a linear SVM using the normalized HOG features. The features are first normalized as follows:
 
 ```
@@ -108,9 +108,9 @@ Finally, we combine the detected windows  with the previous image from camera.
 
 
 ![Frame with windows](http://upload-images.jianshu.io/upload_images/2528310-b52d1cf9e3ae901c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/720)
-
-#### 2. Show some examples of test images to demonstrate how your pipeline is working. What did you do to optimize the performance of your classifier?
+####2. Show some examples of test images to demonstrate how your pipeline is working. What did you do to optimize the performance of your classifier?
 Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result. Here are some example images:
+
 ![test 1](http://upload-images.jianshu.io/upload_images/2528310-2e229838cd6b1b21.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/720)
 
 ![test 2](http://upload-images.jianshu.io/upload_images/2528310-07a57ec28d1a8bbc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/720)
@@ -119,7 +119,7 @@ Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spat
 We also upload the video to [youtube]().
 
 #### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
-I illustrate how we solve the problem in `Sliding Window Search` part.
+I illustrate how we solve the problem in `Sliding Window Search` part. To combine the overlapping bounding boxes, we first use the min-max function to generate the boxes. Sometimes the box is too large. Hence, we write a detection class to average the box boundary.
 
 ### Discussion
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project. Where will your pipeline likely fail? What could you do to make it more robust?
