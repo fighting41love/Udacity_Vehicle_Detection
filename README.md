@@ -87,6 +87,7 @@ confusion_matrix(y_true, y_pred)
 ### Sliding Window Search
 #### 1. Describe how you implemented a sliding window search. How did you decide what scales to search and how much to overlap windows?
 It's not a good idea to search random window all over the image. I decided to search random window positions at random scales just at the bottom of the image like this: 
+
 ![Windows for vehicles detection](http://upload-images.jianshu.io/upload_images/2528310-cc5502a8116f1874.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/720)
 
 I plot the heat map of the windows.
@@ -107,6 +108,7 @@ Finally, we combine the detected windows  with the previous image from camera.
 
 
 ![Frame with windows](http://upload-images.jianshu.io/upload_images/2528310-b52d1cf9e3ae901c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/720)
+
 #### 2. Show some examples of test images to demonstrate how your pipeline is working. What did you do to optimize the performance of your classifier?
 Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result. Here are some example images:
 ![test 1](http://upload-images.jianshu.io/upload_images/2528310-2e229838cd6b1b21.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/720)
